@@ -25,7 +25,7 @@ const company = body('company')
   .isLength({ min: 2, max: 40 })
   .withMessage(COMPANY_LENGTH);
 
-const message = body('company')
+const message = body('message')
   .trim()
   .exists({ checkFalsy: true })
   .isLength({ min: 5 })
