@@ -21,5 +21,16 @@
     "guard-for-in": "off",
     "func-names": "off",
     "no-continue": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": "tests/**",
+      "extends": ["plugin:jest/recommended", "plugin:jest/style"],
+      "rules": {
+        "node/no-unpublished-require": 0,
+        "node/no-missing-require": 0,
+        "jest/no-export": "off"
+      }
+    }
+  ]
 }
