@@ -28,9 +28,8 @@ const company = body('company')
 const message = body('message')
   .trim()
   .exists({ checkFalsy: true })
-  .isLength({ min: 5 })
   .withMessage(MESSAGE_MIN_LENGTH)
-  .matches(/^[a-z а-яё]+$/i)
+  .isLength({ min: 5 })
   .withMessage(MESSAGE_MIN_LENGTH);
 
 const email = body('email')
