@@ -12,6 +12,7 @@ const {
 const name = body('name')
   .trim()
   .exists({ checkFalsy: true })
+  .withMessage(NAME_LENGTH)
   .isLength({ min: 2, max: 40 })
   .withMessage(NAME_LENGTH)
   .matches(/^[a-z а-яё]+$/i)
@@ -20,10 +21,9 @@ const name = body('name')
 const company = body('company')
   .trim()
   .exists({ checkFalsy: true })
+  .withMessage(NAME_LENGTH)
   .isLength({ min: 2, max: 40 })
-  .withMessage(COMPANY_LENGTH)
-  .matches(/^[a-z а-яё]+$/i)
-  .withMessage(LATIN_CYRILLIC_SYMBOLS);
+  .withMessage(COMPANY_LENGTH);
 
 const message = body('company')
   .trim()
@@ -31,7 +31,7 @@ const message = body('company')
   .isLength({ min: 5 })
   .withMessage(MESSAGE_MIN_LENGTH)
   .matches(/^[a-z а-яё]+$/i)
-  .withMessage(LATIN_CYRILLIC_SYMBOLS);
+  .withMessage(MESSAGE_MIN_LENGTH);
 
 const email = body('email')
   .trim()
