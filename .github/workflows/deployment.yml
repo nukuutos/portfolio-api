@@ -43,3 +43,11 @@ jobs:
         uses: yc-actions/yc-cr-login@v0.1-alpha
         with:
           yc-sa-json-credentials: ${{ secrets.YC_CREDENTIALS }}
+
+      - name: Build and push image to YC Container Registry
+        env:
+          CR_REGISTRY: crpp03f6usl9mqb6qlj8
+          IMAGE_NAME: api
+        run: |
+          docker build . -t cr.yandex/$CR_REGISTRY/$IMAGE_NAME
+          docker push cr.yandex/$CR_REGISTRY/$IMAGE_NAME
