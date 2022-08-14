@@ -14,7 +14,7 @@ app.use(cors);
 app.use(rateLimiter);
 app.use(express.json());
 
-app.use('/message', validator, validate, sendMessage);
+app.post('/message', validator, validate, sendMessage);
 
 app.use(errorHandler);
 
