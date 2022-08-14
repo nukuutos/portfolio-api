@@ -39,3 +39,8 @@ jobs:
         NODE_ENV: test
         SG_API_KEY: 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
         CLIENT_URL: http://localhost:3000
+
+    - name: Yandex Cloud Login
+        uses: yc-actions/yc-cr-login@v0.1-alpha
+        with:
+          yc-sa-json-credentials: ${{ secrets.YC_CREDENTIALS }}
