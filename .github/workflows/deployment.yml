@@ -49,5 +49,5 @@ jobs:
           CR_REGISTRY: crpp03f6usl9mqb6qlj8
           IMAGE_NAME: api
         run: |
-          docker build . -t cr.yandex/$CR_REGISTRY/$IMAGE_NAME
+          docker build -t cr.yandex/$CR_REGISTRY/$IMAGE_NAME .
           docker push cr.yandex/$CR_REGISTRY/$IMAGE_NAME
