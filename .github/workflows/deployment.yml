@@ -36,6 +36,7 @@ jobs:
           CLIENT_URL: http://localhost:3000
 
   deploy:
+    needs: test
     runs-on: ubuntu-latest
 
     strategy:
